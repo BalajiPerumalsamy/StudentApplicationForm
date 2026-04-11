@@ -1,11 +1,15 @@
 package com.basePage;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -49,7 +53,7 @@ public class BaseClass
 
     public void clickButton(WebElement element)
     {
-        wait.until(ExpectedConditions.visibilityOf(element)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
 
     public void quitApplications()
@@ -63,6 +67,23 @@ public class BaseClass
         {
             System.out.println(e);
         }
+    }
+
+    public static String captureScreenshot(String testName)
+    {
+        String path = "screenshots/" + testName + ".png";
+        try
+        {
+            TakesScreenshot screenshot=(TakesScreenshot) driver;
+            File src=screenshot.getScreenshotAs(OutputType.FILE);
+            File file=new File(path);
+            FileHandler.copy(src,file);
+        }
+        catch(IOException e)
+        {
+            System.out.println(e);
+        }
+        return path;
     }
 
 }
