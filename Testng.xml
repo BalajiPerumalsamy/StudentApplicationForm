@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Reg_Suite">
+    <test name="TestClassesExecute">
+        <classes>
+            <class name="com.positiveTests.SelectFormPageTest"/>
+            <class name="com.positiveTests.FormFillPageTest"/>
+        </classes>
+    </test>
+</suite>
