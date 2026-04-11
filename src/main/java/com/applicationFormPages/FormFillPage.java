@@ -1,10 +1,13 @@
 package com.applicationFormPages;
 
 import com.basePage.BaseClass;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class FormFillPage extends BaseClass
 {
@@ -32,6 +35,14 @@ public class FormFillPage extends BaseClass
     @FindBy(xpath="//input[@id='dateOfBirthInput']")
     WebElement dateOfBirth;
 
+    @FindBy(xpath="//select[@class='react-datepicker__year-select']")
+    WebElement year;
+
+    @FindBy(xpath="//select[@class='react-datepicker__month-select']")
+    WebElement month;
+
+
+
     @FindBy(xpath="//input[@id='subjectsInput']")
     WebElement subject;
 
@@ -44,11 +55,17 @@ public class FormFillPage extends BaseClass
     @FindBy(xpath="//textarea[@id='currentAddress']")
     WebElement address;
 
-    @FindBy(xpath="//div[text()='Select State']")
+    @FindBy(xpath="//div[@id='state']")
     WebElement state;
 
-    @FindBy(xpath="//div[text()='Select City']")
+    @FindBy(xpath="//div[@id='stateCity-wrapper']//div[text()='NCR']")
+    WebElement selectState;
+
+    @FindBy(xpath="//div[@id='city']")
     WebElement city;
+
+    @FindBy(xpath="//div[@id='stateCity-wrapper']//div[text()='Noida']")
+    WebElement selectCity;
 
     @FindBy(xpath="//button [text()='Submit']")
     WebElement submitButton;
@@ -56,25 +73,37 @@ public class FormFillPage extends BaseClass
     public @FindBy(xpath="//div[text()='Thanks for submitting the form']")
     WebElement verifyMessage;
 
-    public void formFill(String fName, String lName, String userEmail, String number, String dob, String sub,
-                         String userPicture, String userAddress, String userState, String userCity)
+    public void formFill(String fName, String lName, String userEmail, String number, String yearValue, String monthValue, String dayValue, String sub,
+                         String userPicture, String userAddress)
     {
         writeText(fName,firstName);
         writeText(lName,lastName);
         writeText(userEmail,email);
         clickButton(gender);
         writeText(number,mobileNumber);
-        dateOfBirth.sendKeys(dob);
-        dateOfBirth.sendKeys(Keys.ENTER);
+
+
+        clickButton(dateOfBirth);
+        Select yearDropDown=new Select(year);
+        yearDropDown.selectByVisibleText(yearValue);
+        Select monthDropDown=new Select(month);
+        monthDropDown.selectByVisibleText(monthValue);
+        driver.findElement(By.xpath(
+                        "//div[contains(@class,'react-datepicker__day') and not(contains(@class,'outside-month')) and text()='" + dayValue + "']"))
+                .click();
+
         subject.sendKeys(sub);
         subject.sendKeys(Keys.ENTER);
         clickButton(hobbies);
-        //writeText(userPicture,picture);
+        writeText(userPicture,picture);
         writeText(userAddress,address);
-        state.sendKeys(userState);
-        state.sendKeys(Keys.ENTER);
-        city.sendKeys(userCity);
-        city.sendKeys(Keys.ENTER);
+        Actions action=new Actions(driver);
+        action.moveToElement(state).perform();
+        clickButton(state);
+        clickButton(selectState);
+        action.moveToElement(city).perform();
+        clickButton(city);
+        clickButton(selectCity);
         clickButton(submitButton);
     }
 }
