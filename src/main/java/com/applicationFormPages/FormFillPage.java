@@ -41,8 +41,6 @@ public class FormFillPage extends BaseClass
     @FindBy(xpath="//select[@class='react-datepicker__month-select']")
     WebElement month;
 
-
-
     @FindBy(xpath="//input[@id='subjectsInput']")
     WebElement subject;
 
@@ -72,6 +70,12 @@ public class FormFillPage extends BaseClass
 
     public @FindBy(xpath="//div[text()='Thanks for submitting the form']")
     WebElement verifyMessage;
+
+    public String firstNameBorderColor;
+    public String lastNameBorderColor;
+    public String genderBorderColor;
+    public String emailBorderColor;
+    public String mobileNumberBorderColor;
 
     public void formFill(String fName, String lName, String userEmail, String number, String yearValue, String monthValue, String dayValue, String sub,
                          String userPicture, String userAddress)
@@ -105,5 +109,18 @@ public class FormFillPage extends BaseClass
         clickButton(city);
         clickButton(selectCity);
         clickButton(submitButton);
+        emailBorderColor=email.getCssValue("border-color");
+        mobileNumberBorderColor=mobileNumber.getCssValue("border-color");
+    }
+
+    public void shouldShowErrorsWhenSubmittingEmptyForm()
+    {
+        Actions act=new Actions(driver);
+        act.scrollByAmount(0,500).perform();
+        clickButton(submitButton);
+        firstNameBorderColor=firstName.getCssValue("border-color");
+        lastNameBorderColor=lastName.getCssValue("border-color");
+        genderBorderColor=gender.getCssValue("border-color");
+        mobileNumberBorderColor=mobileNumber.getCssValue("border-color");
     }
 }
