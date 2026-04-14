@@ -77,7 +77,8 @@ public class FormFillPage extends BaseClass
     public String emailBorderColor;
     public String mobileNumberBorderColor;
 
-    public void formFill(String fName, String lName, String userEmail, String number, String yearValue, String monthValue, String dayValue, String sub,
+    public void formFill(String fName, String lName, String userEmail, String number, String yearValue,
+                         String monthValue, String dayValue, String sub,
                          String userPicture, String userAddress)
     {
         writeText(fName,firstName);
