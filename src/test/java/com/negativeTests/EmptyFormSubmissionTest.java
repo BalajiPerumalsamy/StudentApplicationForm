@@ -32,13 +32,13 @@ public class EmptyFormSubmissionTest
         formFillPage=new FormFillPage();
         formFillPage.shouldShowErrorsWhenSubmittingEmptyForm();
         Assert.assertTrue(formFillPage.firstNameBorderColor.contains("rgb(220, 53, 69)"),
-                "Application saved");
+                "Application successfully  saved");
         Assert.assertTrue(formFillPage.lastNameBorderColor.contains("rgb(220, 53, 69)"),
-                "Application saved");
+                "Application successfully  saved");
         Assert.assertTrue(formFillPage.genderBorderColor.contains("rgb(220, 53, 69)"),
-                "Application saved");
+                "Application successfully  saved");
         Assert.assertTrue(formFillPage.mobileNumberBorderColor.contains("rgb(220, 53, 69)"),
-                "Application saved");
+                "Application successfully saved");
     }
 
     @AfterMethod
