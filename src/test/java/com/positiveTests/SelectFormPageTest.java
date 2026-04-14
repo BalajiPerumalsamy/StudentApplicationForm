@@ -29,7 +29,7 @@ public class SelectFormPageTest
         selectFormPage=new SelectFormPage();
         selectFormPage.navigateToPracticeForm();
         Assert.assertTrue(selectFormPage.verifyMessage.isDisplayed(),
-                "Couldn't navigate to Practice Form");
+                "Couldn't navigate to Practice Form Page");
     }
 
     @AfterMethod
