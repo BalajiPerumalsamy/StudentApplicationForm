@@ -11,7 +11,7 @@ public class SelectFormPage extends BaseClass
     public SelectFormPage()
     {
       super();
-        PageFactory.initElements(driver,this);
+      PageFactory.initElements(driver,this);
     }
     @FindBy(xpath="//h5[text()='Forms']")
     WebElement selectForm;
