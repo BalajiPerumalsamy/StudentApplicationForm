@@ -38,7 +38,8 @@ public class MobileNumberValidationTest
                 baseClass.properties.getProperty("Year"), baseClass.properties.getProperty("Month"),
                 baseClass.properties.getProperty("Day"),baseClass.properties.getProperty("Subject"),
                 baseClass.properties.getProperty("Picture"), baseClass.properties.getProperty("Address"));
-        Assert.assertTrue(formFillPage.mobileNumberBorderColor.contains("rgb(220, 53, 69)"),"Application saved");
+        Assert.assertTrue(formFillPage.mobileNumberBorderColor.contains("rgb(220, 53, 69)"),
+                "Application successfully saved");
     }
 
     @Test
@@ -51,7 +52,8 @@ public class MobileNumberValidationTest
                 baseClass.properties.getProperty("Year"), baseClass.properties.getProperty("Month"),
                 baseClass.properties.getProperty("Day"),baseClass.properties.getProperty("Subject"),
                 baseClass.properties.getProperty("Picture"), baseClass.properties.getProperty("Address"));
-        Assert.assertTrue(formFillPage.mobileNumberBorderColor.contains("rgb(220, 53, 69)"),"Application saved");
+        Assert.assertTrue(formFillPage.mobileNumberBorderColor.contains("rgb(220, 53, 69)"),
+                "Application successfully  saved");
     }
 
     @Test
@@ -65,7 +67,7 @@ public class MobileNumberValidationTest
                 baseClass.properties.getProperty("Day"),baseClass.properties.getProperty("Subject"),
                 baseClass.properties.getProperty("Picture"), baseClass.properties.getProperty("Address"));
         Assert.assertTrue(formFillPage.mobileNumberBorderColor.contains("rgb(220, 53, 69)"),
-                "Application saved");
+                "Application successfully saved");
     }
 
     @AfterMethod
