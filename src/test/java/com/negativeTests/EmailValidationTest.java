@@ -61,15 +61,18 @@ public class EmailValidationTest
     {
         formFillPage=new FormFillPage();
         formFillPage.formFill(baseClass.properties.getProperty("FirstName"),
-                baseClass.properties.getProperty("LastName"), baseClass.properties.getProperty("InvalidEmail3"),
+                baseClass.properties.getProperty("LastName"),
+                baseClass.properties.getProperty("InvalidEmail3"),
                 baseClass.properties.getProperty("MobileNumber"),
-                baseClass.properties.getProperty("Year"), baseClass.properties.getProperty("Month"),
-                baseClass.properties.getProperty("Day"),baseClass.properties.getProperty("Subject"),
-                baseClass.properties.getProperty("Picture"), baseClass.properties.getProperty("Address"));
+                baseClass.properties.getProperty("Year"),
+                baseClass.properties.getProperty("Month"),
+                baseClass.properties.getProperty("Day"),
+                baseClass.properties.getProperty("Subject"),
+                baseClass.properties.getProperty("Picture"),
+                baseClass.properties.getProperty("Address"));
         Assert.assertTrue(formFillPage.emailBorderColor.contains("rgb(220, 53, 69)"),
                 "Application successfully  saved");
     }
-
 
     @AfterMethod
     public void tearDown()
