@@ -35,11 +35,15 @@ public class FormFillPageTest
     {
         formFillPage=new FormFillPage();
         formFillPage.formFill(baseClass.properties.getProperty("FirstName"),
-                baseClass.properties.getProperty("LastName"), baseClass.properties.getProperty("Email"),
+                baseClass.properties.getProperty("LastName"),
+                baseClass.properties.getProperty("Email"),
                 baseClass.properties.getProperty("MobileNumber"),
-                baseClass.properties.getProperty("Year"), baseClass.properties.getProperty("Month"),
-                baseClass.properties.getProperty("Day"),baseClass.properties.getProperty("Subject"),
-                baseClass.properties.getProperty("Picture"), baseClass.properties.getProperty("Address"));
+                baseClass.properties.getProperty("Year"),
+                baseClass.properties.getProperty("Month"),
+                baseClass.properties.getProperty("Day"),
+                baseClass.properties.getProperty("Subject"),
+                baseClass.properties.getProperty("Picture"),
+                baseClass.properties.getProperty("Address"));
         Assert.assertTrue(formFillPage.verifyMessage.isDisplayed(),"Application couldn't saved");
     }
 
