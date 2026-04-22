@@ -25,6 +25,7 @@ public class BaseClass
     {
         String filePath="C://Users//ELCOT//IdeaProjects//StudentApplicationForm//src//main//resources//InputData";
         properties=new Properties();
+
         try
         {
             FileInputStream file=new FileInputStream(filePath);
