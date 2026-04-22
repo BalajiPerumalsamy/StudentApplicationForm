@@ -87,7 +87,6 @@ public class FormFillPage extends BaseClass
         clickButton(gender);
         writeText(number,mobileNumber);
 
-
         clickButton(dateOfBirth);
         Select yearDropDown=new Select(year);
         yearDropDown.selectByVisibleText(yearValue);
