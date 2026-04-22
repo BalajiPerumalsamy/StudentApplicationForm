@@ -33,11 +33,15 @@ public class MobileNumberValidationTest
     {
         formFillPage=new FormFillPage();
         formFillPage.formFill(baseClass.properties.getProperty("FirstName"),
-                baseClass.properties.getProperty("LastName"), baseClass.properties.getProperty("Email"),
+                baseClass.properties.getProperty("LastName"),
+                baseClass.properties.getProperty("Email"),
                 baseClass.properties.getProperty("InvalidMobileNumber1"),
-                baseClass.properties.getProperty("Year"), baseClass.properties.getProperty("Month"),
-                baseClass.properties.getProperty("Day"),baseClass.properties.getProperty("Subject"),
-                baseClass.properties.getProperty("Picture"), baseClass.properties.getProperty("Address"));
+                baseClass.properties.getProperty("Year"),
+                baseClass.properties.getProperty("Month"),
+                baseClass.properties.getProperty("Day"),
+                baseClass.properties.getProperty("Subject"),
+                baseClass.properties.getProperty("Picture"),
+                baseClass.properties.getProperty("Address"));
         Assert.assertTrue(formFillPage.mobileNumberBorderColor.contains("rgb(220, 53, 69)"),
                 "Application successfully saved");
     }
