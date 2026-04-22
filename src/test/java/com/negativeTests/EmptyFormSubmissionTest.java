@@ -19,7 +19,6 @@ public class EmptyFormSubmissionTest
     {
         baseClass=new BaseClass();
         baseClass.navigateToApplication();
-
         selectFormPage=new SelectFormPage();
         selectFormPage.navigateToPracticeForm();
         Assert.assertTrue(selectFormPage.verifyMessage.isDisplayed(),
