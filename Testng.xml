@@ -3,13 +3,11 @@
 <suite name="Reg_Suite">
     <test name="TestClassesExecute">
         <classes>
-
             <class name="com.positiveTests.SelectFormPageTest"/>
             <class name="com.positiveTests.FormFillPageTest"/>
             <class name="com.negativeTests.EmailValidationTest"/>
             <class name="com.negativeTests.MobileNumberValidationTest"/>
             <class name="com.negativeTests.EmptyFormSubmissionTest"/>
-
         </classes>
     </test>
 </suite>
